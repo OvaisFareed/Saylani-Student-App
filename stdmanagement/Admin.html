@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="admin.css"/>
+</head>
+
+<body ng-app="stdApp">
+<md-toolbar layout="row"  class="toolbar">
+    <div style="text-align:center" flex="85">
+    <h2>Admin Panel</h2>
+    </div>
+    <div>
+        <md-button style="margin: 22px auto auto 70px" class="md-warn md-raised md-hue-2">Logout</md-button>
+    </div>
+</md-toolbar>
+
+<div class="tabsdemoDynamicHeight" ng-app="stdApp">
+    <md-content class="md-padding">
+        <md-tabs md-dynamic-height="" md-border-bottom="">
+            <md-tab label="Add Student">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Add Student Form</h1>
+                    <div ng-controller="DemoCtrl" layout="column" class="inputdemoIcons">
+
+                        <br>
+                        <md-content layout-padding="" class="autoScroll">
+
+
+                            <md-input-container md-no-float="">
+                                <md-icon md-svg-src="img/person.svg"></md-icon>
+                                <input ng-model="username" type="text" placeholder="Student Name">
+                            </md-input-container>
+
+
+                            <md-input-container md-no-float="">
+                                <md-icon md-svg-src="img/person.svg"></md-icon>
+                                <input ng-model="password" type="password" placeholder="Password">
+                            </md-input-container>
+
+
+                            <md-input-container md-no-float="">
+                                <md-icon md-svg-src="img/phone.svg"></md-icon>
+                                <input ng-model="Rno" type="number" placeholder="Roll Number">
+                            </md-input-container>
+
+                            <md-input-container md-no-float="">
+                                <md-icon md-svg-src="img/email.svg"></md-icon>
+                                <input ng-model="mmail" type="email" placeholder="Email Address" ng-required="true">
+                            </md-input-container>
+
+                            <md-select placeholder="Class" ng-model="myModel">
+                                <md-option value="1">One</md-option>
+                                <md-option value="2">Two</md-option>
+                                <md-option value="3">Three</md-option>
+                                <md-option value="4">Four</md-option>
+                                <md-option value="5">Five</md-option>
+                            </md-select>
+                            <br><br><br>
+                            <md-button  class="md-warn md-raised md-hue-2" ng-click="submit();">Submit</md-button>
+
+                            <ul>
+                                <li ng-repeat="task in myusers">
+                                    {{task.username}}
+                                </li>
+                            </ul>
+
+                        </md-content>
+
+                    </div>
+                </md-content>
+            </md-tab>
+            <md-tab label="Student's Record">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Tab Two</h1>
+
+                    <div ng-controller="DemoCtrl">
+                        <br>
+
+                        <md-content layout-padding="" class="autoScroll">
+                            <ul>
+                                <li ng-repeat="task in myusers">
+                                    {{task.username}}
+                                </li>
+                            </ul>
+                           <!-- <table>
+                                <tr ng-repeat="user in myusers">
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.password}}</td>
+                                    <td>{{user.Rno}}</td>
+                                    <td>{{user.mail}}</td>
+                                    <td>{{user.class}}</td>
+                                    <td>{{user.tasks}}
+                                    </td>
+                                    <td><button ng-click="addTask($index);">Add Task</button></td>
+                                    <td><button ng-click="deleteTask();">Delete</button></td>
+                                </tr>
+                            </table> -->
+
+                        </md-content>
+
+                        </div>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/firebase/firebase.js"></script>
+<script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

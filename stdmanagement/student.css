@@ -1,0 +1,10 @@
+md-toolbar.toolbar{
+    background-color: #4290ff;
+    height: 85px;
+}
+md-toolbar h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ffffff;
+    font-family: "Helvetica Neue";
+}

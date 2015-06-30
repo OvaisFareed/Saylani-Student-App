@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="home.css"/>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="Controller.js"></script>
+
+</head>
+
+<body ng-app="stdApp">
+<md-toolbar layout="row"  class="toolbar">
+    <div flex="10">
+    <img id="logo" src="img/lead-management-software.png"/>
+    </div>
+    <div flex="50">
+    <h2> Student Management System</h2>
+    </div>
+
+    <div layout layout-sm="column" ng-controller="DemoCtrl">
+        <md-input-container flex>
+            <label>Admin Email</label>
+            <input style="font-size:85%"; ng-model="username" type="email" ng-required="true">
+        </md-input-container>
+        <md-input-container flex="25">
+            <label>Password</label>
+            <input ng-model="pwd" type="password" ng-required="true">
+        </md-input-container>
+        <md-button class="md-warn md-raised md-hue-2" ng-click="login();">Login</md-button>
+    </div>
+</md-toolbar>
+
+<div layout="row" layout-sm="column">
+    <div flex>
+
+    </div>
+    <div flex>
+    <hgroup>
+        <h1>Student SignIn here!</h1>
+        <h3>Login Form</h3>
+    </hgroup>
+    <form>
+        <div class="group">
+            <input type="text" class="effect"><span class="highlight"></span><span class="bar"></span>
+            <label>Name</label>
+        </div>
+        <div class="group">
+            <input type="email" class="effect"><span class="highlight"></span><span class="bar"></span>
+            <label>Email</label>
+        </div>
+        <button type="button" class="button buttonBlue">Login
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+    </form>
+    <footer>
+        <a href="#" target="_blank"><img src="img/p-logo.svg"></a>
+        <p>Want To See My Portfolio  <a href="http://rj-developers.tk/" target="_blank">Rj Developers</a></p>
+    </footer>
+    </div>
+</div>
+
+</body>
+</html>
